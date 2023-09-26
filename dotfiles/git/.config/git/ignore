@@ -1,0 +1,34 @@
+syntax: glob
+
+# Misc
+*.diff
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Java
+*.class
+*.jar
+
+# Maven
+target/
+
+# jenv
+.java-version
+
+# Intellij
+*.iml
+*.ipr
+*.iws
+.idea/
+out
+
+# VS Code
+.vscode/
+tsconfig.json
+
+# Node.js
+node_modules

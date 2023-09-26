@@ -1,0 +1,159 @@
+[alias]
+
+	l = log --date=short --pretty=format:'%Cred%h %Cgreen(%ad)%Creset -%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset'
+	gl = l --all --graph
+	sl = l --stat
+	head = l -n1
+
+	pl = pull
+	ps = push
+
+	s = status -sb
+	st = status
+
+	br = branch
+	bra = branch -a
+	brr = branch -r
+
+	ci = commit -v
+	amend = commit --amend
+	unadd = rm -r --cached
+
+	co = checkout
+
+	di = diff
+	staged = diff --cached
+	changes= diff --name-status -r
+	ds = diff --stat -r
+
+	r  = remote -v
+
+	ri = rebase -i
+
+	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+
+	whoami = config user.email
+
+[apply]
+
+	whitespace = fix
+
+[color]
+
+	ui = auto
+	showbranch = true
+	interactive = true
+
+[color "branch"]
+
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+
+	commit = yellow bold
+	frag = magenta bold
+	meta = 11
+	new = green bold
+	old = red bold
+	whitespace = red reverse
+
+[color "diff-highlight"]
+
+	newHighlight = green bold 22
+	newNormal = green bold
+	oldHighlight = red bold 52
+	oldNormal = red bold
+
+[color "status"]
+
+	added = green
+	branch = blue
+	changed = yellow
+	untracked = red
+
+[commit]
+
+	gpgsign = true
+
+[core]
+
+	autocrlf = input
+	commitGraph = true
+	ignorecase = false
+	# pager = delta
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	safecrlf = warn
+	trustctime = false
+	untrackedCache = true
+	whitespace = trailing-space,space-before-tab
+
+[delta]
+
+	features = line-numbers decorations
+	whitespace-error-style = 22 reverse
+	syntax-theme = Dracula
+	plus-style = syntax "#003800"
+	minus-style = syntax "#3f0001"
+
+[delta "decorations"]
+
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
+	hunk-header-decoration-style = cyan box ul
+
+[delta "line-numbers"]
+
+	line-numbers-left-style = cyan
+	line-numbers-right-style = cyan
+	line-numbers-minus-style = 124
+	line-numbers-plus-style = 28
+
+[diff]
+
+	colorMoved = default
+
+[fetch]
+
+	prune = true
+	writeCommitGraph = true
+
+[gpg]
+
+	program = gpg
+
+[interactive]
+
+	diffFilter = delta --color-only
+
+[mergetool]
+
+	keepBackup = true
+
+[push]
+
+	default = simple
+	followTags = true
+
+[remote "origin"]
+
+	fetch = +refs/pull/*/head:refs/remotes/origin/pull/*
+
+[rerere]
+
+	enabled = true
+
+[user]
+
+	name = Thomas Roger
+	email = throger@gmail.com
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
