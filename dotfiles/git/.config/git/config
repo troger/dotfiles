@@ -82,7 +82,7 @@
 	autocrlf = input
 	commitGraph = true
 	ignorecase = false
-	# pager = delta
+	pager = delta
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	safecrlf = warn
 	trustctime = false
@@ -123,6 +123,7 @@
 [gpg]
 
 	program = gpg
+	format = ssh
 
 [interactive]
 
@@ -149,6 +150,7 @@
 
 	name = Thomas Roger
 	email = throger@gmail.com
+	signingkey = ~/.ssh/github_ed.pub
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -157,3 +159,5 @@
 	required = true
 [init]
 	defaultBranch = main
+[tag]
+	gpgsign = true

@@ -17,6 +17,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo 'general'
 # Set computer name
 sudo scutil --set ComputerName "protoss"
+sudo scutil --set LocalHostName "protoss"
+sudo scutil --set HostName "protoss"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "protoss"
 
 # Disable the sound effects on boot

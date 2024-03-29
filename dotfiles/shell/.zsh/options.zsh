@@ -8,6 +8,7 @@ setopt auto_cd
 
 # don’t overwrite existing files
 setopt no_clobber
+setopt append_create
 
 # no error if a pattern for filename generation has no matches
 setopt null_glob
